@@ -1,0 +1,633 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+init CODE 0 2 2 4 1 2
+reset_vec CODE 0 0 0 2 1 2
+config CONFIG 4 300000 300000 E 1 1
+$dist/default/debug\Interfacing.debug.o
+cinit CODE 0 171E 171E 36 1 2
+text0 CODE 0 1002 1002 1B0 1 2
+text1 CODE 0 1590 1590 6A 1 2
+text2 CODE 0 15FA 15FA 6A 1 2
+text3 CODE 0 13D4 13D4 B2 1 2
+text4 CODE 0 1486 1486 9A 1 2
+text5 CODE 0 1664 1664 66 1 2
+text6 CODE 0 1520 1520 70 1 2
+text7 CODE 0 16CA 16CA 54 1 2
+text8 CODE 0 12C4 12C4 110 1 2
+text9 CODE 0 1784 1784 26 1 2
+nvCOMRAM COMRAM 1 4A 4A 1 1 1
+text10 CODE 0 11B2 11B2 112 1 2
+idataCOMRAM CODE 0 1754 1754 30 1 1
+cstackCOMRAM COMRAM 1 31 31 E 1 1
+smallconst SMALLCONST 0 1000 1000 2 1 2
+dataCOMRAM COMRAM 1 1 1 30 1 1
+bssCOMRAM COMRAM 1 3F 3F B 1 1
+config CONFIG 4 300000 300000 E 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-EEE 1
+RAM F00-F5F 1
+SFR F60-F9B 1
+SFR F9D-FD3 1
+SFR FD5-FDA 1
+SFR FE0-FE2 1
+SFR FE8-FEA 1
+SFR FF0-FFB 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+BANK8 800-8FF 1
+BANK9 900-9FF 1
+CONST 6-FFF 1
+CONST 17AA-FCFF 1
+IDLOC 200000-200007 1
+SMALLCONST 17AA-FCFF 1
+CODE 6-FFF 1
+CODE 17AA-FCFF 1
+BANK10 A00-AFF 1
+BANK11 B00-BFF 1
+BANK12 C00-CFF 1
+BANK13 D00-DFF 1
+BANK14 E00-EEE 1
+BANK15 F00-F5F 1
+BIGRAM 4B-EEE 1
+BIGRAM F00-F5F 1
+BIGSFR F60-F9B 1
+BIGSFR F9D-FD3 1
+BIGSFR FD5-FDA 1
+BIGSFR FE0-FE2 1
+BIGSFR FE8-FEA 1
+BIGSFR FF0-FFB 1
+COMRAM 4B-5F 1
+EEDATA F00000-F003FF 1
+MEDIUMCONST 17AA-FCFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\Interfacing.debug.o
+11B2 text10 CODE >25:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+11B2 text10 CODE >26:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+11B6 text10 CODE >27:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+11E6 text10 CODE >28:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+11EA text10 CODE >29:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+11EE text10 CODE >32:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1240 text10 CODE >33:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1244 text10 CODE >35:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1290 text10 CODE >36:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1294 text10 CODE >38:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12AE text10 CODE >38:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12B6 text10 CODE >38:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12C0 text10 CODE >40:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12C2 text10 CODE >41:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1784 text9 CODE >17:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1784 text9 CODE >18:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1784 text9 CODE >19:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1794 text9 CODE >20:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1798 text9 CODE >21:D:\Interfacing\ECU_Layer/button/ecu_button.c
+179C text9 CODE >22:D:\Interfacing\ECU_Layer/button/ecu_button.c
+17A6 text9 CODE >24:D:\Interfacing\ECU_Layer/button/ecu_button.c
+17A8 text9 CODE >25:D:\Interfacing\ECU_Layer/button/ecu_button.c
+12C4 text8 CODE >73:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12C4 text8 CODE >74:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12C8 text8 CODE >75:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12F8 text8 CODE >76:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+12FC text8 CODE >77:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1300 text8 CODE >80:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1352 text8 CODE >81:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1356 text8 CODE >83:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13A2 text8 CODE >84:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13A6 text8 CODE >87:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13B0 text8 CODE >87:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13BE text8 CODE >87:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13C6 text8 CODE >87:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13D0 text8 CODE >89:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13D2 text8 CODE >90:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+16CA text7 CODE >140:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+16CA text7 CODE >141:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+16CA text7 CODE >142:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+16FA text7 CODE >143:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+16FA text7 CODE >144:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+16FE text7 CODE >145:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1706 text7 CODE >146:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+171C text7 CODE >149:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1520 text6 CODE >17:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1520 text6 CODE >18:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1524 text6 CODE >19:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1534 text6 CODE >20:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1538 text6 CODE >21:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+153C text6 CODE >22:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1584 text6 CODE >26:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+158C text6 CODE >28:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+158E text6 CODE >29:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1664 text5 CODE >204:D:\Interfacing\application.c
+1664 text5 CODE >206:D:\Interfacing\application.c
+166E text5 CODE >207:D:\Interfacing\application.c
+1678 text5 CODE >208:D:\Interfacing\application.c
+1682 text5 CODE >209:D:\Interfacing\application.c
+168C text5 CODE >210:D:\Interfacing\application.c
+1696 text5 CODE >211:D:\Interfacing\application.c
+16A0 text5 CODE >212:D:\Interfacing\application.c
+16AA text5 CODE >213:D:\Interfacing\application.c
+16B4 text5 CODE >215:D:\Interfacing\application.c
+16BE text5 CODE >216:D:\Interfacing\application.c
+16C8 text5 CODE >218:D:\Interfacing\application.c
+1486 text4 CODE >102:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1486 text4 CODE >103:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+1486 text4 CODE >104:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+14C6 text4 CODE >105:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+14C6 text4 CODE >106:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+14CA text4 CODE >107:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+151E text4 CODE >110:D:\Interfacing\MCAL_Layer/GPIO/hal_gpio.c
+13D4 text3 CODE >35:D:\Interfacing\ECU_Layer/button/ecu_button.c
+13D4 text3 CODE >37:D:\Interfacing\ECU_Layer/button/ecu_button.c
+13D8 text3 CODE >38:D:\Interfacing\ECU_Layer/button/ecu_button.c
+13DC text3 CODE >39:D:\Interfacing\ECU_Layer/button/ecu_button.c
+13FC text3 CODE >40:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1400 text3 CODE >41:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1404 text3 CODE >42:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1410 text3 CODE >43:D:\Interfacing\ECU_Layer/button/ecu_button.c
+142A text3 CODE >44:D:\Interfacing\ECU_Layer/button/ecu_button.c
+143A text3 CODE >45:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1442 text3 CODE >46:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1446 text3 CODE >47:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1454 text3 CODE >49:D:\Interfacing\ECU_Layer/button/ecu_button.c
+146E text3 CODE >50:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1482 text3 CODE >57:D:\Interfacing\ECU_Layer/button/ecu_button.c
+1484 text3 CODE >59:D:\Interfacing\ECU_Layer/button/ecu_button.c
+15FA text2 CODE >59:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+15FA text2 CODE >60:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+15FA text2 CODE >61:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+160A text2 CODE >62:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+160A text2 CODE >63:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+160E text2 CODE >64:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1656 text2 CODE >68:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1662 text2 CODE >71:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1590 text1 CODE >38:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1590 text1 CODE >39:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1590 text1 CODE >40:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+15A0 text1 CODE >41:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+15A0 text1 CODE >42:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+15A4 text1 CODE >43:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+15EC text1 CODE >47:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+15F8 text1 CODE >50:D:\Interfacing\ECU_Layer/LED/ecu_led.c
+1002 text0 CODE >92:D:\Interfacing\application.c
+1002 text0 CODE >94:D:\Interfacing\application.c
+1006 text0 CODE >97:D:\Interfacing\application.c
+1014 text0 CODE >98:D:\Interfacing\application.c
+1022 text0 CODE >119:D:\Interfacing\application.c
+1032 text0 CODE >120:D:\Interfacing\application.c
+1036 text0 CODE >121:D:\Interfacing\application.c
+104C text0 CODE >122:D:\Interfacing\application.c
+1054 text0 CODE >126:D:\Interfacing\application.c
+105C text0 CODE >127:D:\Interfacing\application.c
+1060 text0 CODE >130:D:\Interfacing\application.c
+1072 text0 CODE >131:D:\Interfacing\application.c
+1076 text0 CODE >132:D:\Interfacing\application.c
+1096 text0 CODE >133:D:\Interfacing\application.c
+109E text0 CODE >134:D:\Interfacing\application.c
+10A6 text0 CODE >135:D:\Interfacing\application.c
+10AE text0 CODE >136:D:\Interfacing\application.c
+10B6 text0 CODE >137:D:\Interfacing\application.c
+10BA text0 CODE >138:D:\Interfacing\application.c
+10DE text0 CODE >139:D:\Interfacing\application.c
+10E6 text0 CODE >140:D:\Interfacing\application.c
+10EE text0 CODE >141:D:\Interfacing\application.c
+10F6 text0 CODE >142:D:\Interfacing\application.c
+10FE text0 CODE >143:D:\Interfacing\application.c
+1102 text0 CODE >147:D:\Interfacing\application.c
+1112 text0 CODE >148:D:\Interfacing\application.c
+1116 text0 CODE >149:D:\Interfacing\application.c
+112C text0 CODE >150:D:\Interfacing\application.c
+1134 text0 CODE >154:D:\Interfacing\application.c
+113C text0 CODE >155:D:\Interfacing\application.c
+1140 text0 CODE >158:D:\Interfacing\application.c
+1152 text0 CODE >159:D:\Interfacing\application.c
+1156 text0 CODE >160:D:\Interfacing\application.c
+1166 text0 CODE >161:D:\Interfacing\application.c
+116E text0 CODE >162:D:\Interfacing\application.c
+1176 text0 CODE >163:D:\Interfacing\application.c
+117E text0 CODE >164:D:\Interfacing\application.c
+1186 text0 CODE >166:D:\Interfacing\application.c
+118A text0 CODE >167:D:\Interfacing\application.c
+1192 text0 CODE >168:D:\Interfacing\application.c
+119A text0 CODE >169:D:\Interfacing\application.c
+11A2 text0 CODE >170:D:\Interfacing\application.c
+171E cinit CODE >1819:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+171E cinit CODE >1821:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+171E cinit CODE >1824:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+171E cinit CODE >1961:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1720 cinit CODE >1962:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1722 cinit CODE >1963:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1724 cinit CODE >1964:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1726 cinit CODE >1965:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1728 cinit CODE >1966:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+172A cinit CODE >1967:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+172E cinit CODE >1968:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1732 cinit CODE >1969:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1732 cinit CODE >1970:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1734 cinit CODE >1971:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1738 cinit CODE >1972:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+173A cinit CODE >1973:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+173C cinit CODE >1974:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+173E cinit CODE >1978:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1742 cinit CODE >1979:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1744 cinit CODE >1980:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1744 cinit CODE >1981:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1746 cinit CODE >1982:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1748 cinit CODE >1983:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+174A cinit CODE >1989:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+174A cinit CODE >1992:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+174C cinit CODE >1993:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+174E cinit CODE >1994:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+1750 cinit CODE >1995:C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_1.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\Interfacing.debug.o
+_btn_high_valid 41 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+__Hspace_0 17AA 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Hspace_1 4B 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Hspace_2 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Hspace_4 60000E 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\Interfacing.debug.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Interfacing.debug.o
+_btn_low_last_valid_status 1F 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_lat_registers B 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+__L__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\Interfacing.debug.o
+__Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/debug\Interfacing.debug.o
+_LATA F89 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_LATB F8A 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_LATC F8B 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_LATD F8C 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_LATE F8D 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+___sp 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+_flag 43 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+_main 1002 0 CODE 0 text0 dist/default/debug\Interfacing.debug.o
+___stack_hi 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+___stack_lo 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+start 2 0 CODE 0 init C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\Interfacing.debug.o
+_btn_status_high 49 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+_gpio_pin_read_logic 1486 0 CODE 0 text4 dist/default/debug\Interfacing.debug.o
+_application_initialize 1664 0 CODE 0 text5 dist/default/debug\Interfacing.debug.o
+led_turn_on@pin_obj 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__Hpowerup 2 0 CODE 0 powerup dist/default/debug\Interfacing.debug.o
+__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/debug\Interfacing.debug.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\Interfacing.debug.o
+led_initialize@pin_obj 3E 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__accesstop 60 0 ABS 0 - C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+intlevel0 0 0 CODE 0 text C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+led_initialize@F3143 47 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\Interfacing.debug.o
+_btn_high_valid_status 22 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+gpio_pin_direction_initialization@ret 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\Interfacing.debug.o
+gpio_pin_initialization@pin_config 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\Interfacing.debug.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\Interfacing.debug.o
+__pidataCOMRAM 1754 0 CODE 0 idataCOMRAM dist/default/debug\Interfacing.debug.o
+gpio_pin_read_logic@pin_config 31 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+button_read_state@Pin_Logic_Status 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+led_initialize@led 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+led_initialize@ret 3D 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\Interfacing.debug.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\Interfacing.debug.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\Interfacing.debug.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\Interfacing.debug.o
+__Hintcodelo 2 0 CODE 0 intcodelo dist/default/debug\Interfacing.debug.o
+_led_turn_off 15FA 0 CODE 0 text2 dist/default/debug\Interfacing.debug.o
+__end_of_gpio_pin_read_logic 1520 0 CODE 0 text4 dist/default/debug\Interfacing.debug.o
+__end_of_gpio_pin_write_logic 13D4 0 CODE 0 text8 dist/default/debug\Interfacing.debug.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\Interfacing.debug.o
+_port_registers 1 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+gpio_pin_write_logic@pin_config 31 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+gpio_pin_read_logic@logic_status 32 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+led_turn_on@led 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/debug\Interfacing.debug.o
+__Lintcodelo 2 0 CODE 0 intcodelo dist/default/debug\Interfacing.debug.o
+start_initialization 171E 0 CODE 0 cinit dist/default/debug\Interfacing.debug.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\Interfacing.debug.o
+button_initialize@btn 38 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+button_initialize@ret 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+___rparam_used 1 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__end_of_button_read_state 1486 0 CODE 0 text3 dist/default/debug\Interfacing.debug.o
+isa$xinst 0 0 ABS 0 - C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__end_of_application_initialize 16CA 0 CODE 0 text5 dist/default/debug\Interfacing.debug.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/debug\Interfacing.debug.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/debug\Interfacing.debug.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/debug\Interfacing.debug.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/debug\Interfacing.debug.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/debug\Interfacing.debug.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/debug\Interfacing.debug.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/debug\Interfacing.debug.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/debug\Interfacing.debug.o
+__Hbank8 0 0 ABS 0 bank8 dist/default/debug\Interfacing.debug.o
+__Hbank9 0 0 ABS 0 bank9 dist/default/debug\Interfacing.debug.o
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\Interfacing.debug.o
+__Hconst 0 0 CONST 0 const dist/default/debug\Interfacing.debug.o
+__Hidata 0 0 CODE 0 idata dist/default/debug\Interfacing.debug.o
+__Hidloc 0 0 ABS 0 idloc dist/default/debug\Interfacing.debug.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\Interfacing.debug.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/debug\Interfacing.debug.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\Interfacing.debug.o
+__Hstack 0 0 STACK 2 stack dist/default/debug\Interfacing.debug.o
+__Htext0 0 0 ABS 0 text0 dist/default/debug\Interfacing.debug.o
+__Htext1 0 0 ABS 0 text1 dist/default/debug\Interfacing.debug.o
+__Htext2 0 0 ABS 0 text2 dist/default/debug\Interfacing.debug.o
+__Htext3 0 0 ABS 0 text3 dist/default/debug\Interfacing.debug.o
+__Htext4 0 0 ABS 0 text4 dist/default/debug\Interfacing.debug.o
+__Htext5 0 0 ABS 0 text5 dist/default/debug\Interfacing.debug.o
+__Htext6 0 0 ABS 0 text6 dist/default/debug\Interfacing.debug.o
+__Htext7 0 0 ABS 0 text7 dist/default/debug\Interfacing.debug.o
+__Htext8 0 0 ABS 0 text8 dist/default/debug\Interfacing.debug.o
+__Htext9 0 0 ABS 0 text9 dist/default/debug\Interfacing.debug.o
+__Hbank10 0 0 ABS 0 bank10 dist/default/debug\Interfacing.debug.o
+__Hbank11 0 0 ABS 0 bank11 dist/default/debug\Interfacing.debug.o
+__Hbank12 0 0 ABS 0 bank12 dist/default/debug\Interfacing.debug.o
+__Hbank13 0 0 ABS 0 bank13 dist/default/debug\Interfacing.debug.o
+__Hbank14 0 0 ABS 0 bank14 dist/default/debug\Interfacing.debug.o
+__Hbank15 0 0 ABS 0 bank15 dist/default/debug\Interfacing.debug.o
+__end_of_led_turn_off 1664 0 CODE 0 text2 dist/default/debug\Interfacing.debug.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\Interfacing.debug.o
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\Interfacing.debug.o
+__Hbigsfr 0 0 ABS 0 bigsfr dist/default/debug\Interfacing.debug.o
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__Hcomram 0 0 ABS 0 comram dist/default/debug\Interfacing.debug.o
+__Hconfig 30000E 0 CONFIG 4 config dist/default/debug\Interfacing.debug.o
+led_turn_toggle@F3158 44 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+led_turn_off@pin_obj 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/debug\Interfacing.debug.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/debug\Interfacing.debug.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/debug\Interfacing.debug.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/debug\Interfacing.debug.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/debug\Interfacing.debug.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/debug\Interfacing.debug.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/debug\Interfacing.debug.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/debug\Interfacing.debug.o
+__Lbank8 0 0 ABS 0 bank8 dist/default/debug\Interfacing.debug.o
+__Lbank9 0 0 ABS 0 bank9 dist/default/debug\Interfacing.debug.o
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\Interfacing.debug.o
+__Lconst 0 0 CONST 0 const dist/default/debug\Interfacing.debug.o
+__Lidata 0 0 CODE 0 idata dist/default/debug\Interfacing.debug.o
+__Lidloc 0 0 ABS 0 idloc dist/default/debug\Interfacing.debug.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\Interfacing.debug.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/debug\Interfacing.debug.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\Interfacing.debug.o
+__Lstack 0 0 STACK 2 stack dist/default/debug\Interfacing.debug.o
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\Interfacing.debug.o
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\Interfacing.debug.o
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\Interfacing.debug.o
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\Interfacing.debug.o
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\Interfacing.debug.o
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\Interfacing.debug.o
+__Ltext6 0 0 ABS 0 text6 dist/default/debug\Interfacing.debug.o
+__Ltext7 0 0 ABS 0 text7 dist/default/debug\Interfacing.debug.o
+__Ltext8 0 0 ABS 0 text8 dist/default/debug\Interfacing.debug.o
+__Ltext9 0 0 ABS 0 text9 dist/default/debug\Interfacing.debug.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\Interfacing.debug.o
+_btn_status_low 48 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\Interfacing.debug.o
+gpio_pin_write_logic@ret 38 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\Interfacing.debug.o
+__Hdata 0 0 ABS 0 data dist/default/debug\Interfacing.debug.o
+__Hheap 0 0 HEAP 7 heap dist/default/debug\Interfacing.debug.o
+__Hinit 6 0 CODE 0 init dist/default/debug\Interfacing.debug.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\Interfacing.debug.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\Interfacing.debug.o
+__Htemp 0 0 COMRAM 1 temp dist/default/debug\Interfacing.debug.o
+__Htext 0 0 ABS 0 text dist/default/debug\Interfacing.debug.o
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\Interfacing.debug.o
+__Ldata 0 0 ABS 0 data dist/default/debug\Interfacing.debug.o
+__Lheap 0 0 HEAP 7 heap dist/default/debug\Interfacing.debug.o
+__Linit 2 0 CODE 0 init dist/default/debug\Interfacing.debug.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\Interfacing.debug.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\Interfacing.debug.o
+__Ltemp 0 0 COMRAM 1 temp dist/default/debug\Interfacing.debug.o
+__Ltext 0 0 ABS 0 text dist/default/debug\Interfacing.debug.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__Hintret 0 0 ABS 0 intret dist/default/debug\Interfacing.debug.o
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\Interfacing.debug.o
+__S0 17AA 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__S1 4B 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__S4 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__S5 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_ret 4A 0 COMRAM 1 nvCOMRAM dist/default/debug\Interfacing.debug.o
+gpio_pin_write_logic@logic 32 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__pnvCOMRAM 4A 0 COMRAM 1 nvCOMRAM dist/default/debug\Interfacing.debug.o
+_led_turn_on 1590 0 CODE 0 text1 dist/default/debug\Interfacing.debug.o
+_btn_high 26 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\Interfacing.debug.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\Interfacing.debug.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\Interfacing.debug.o
+_button_read_state 13D4 0 CODE 0 text3 dist/default/debug\Interfacing.debug.o
+__Lintentry 0 0 ABS 0 intentry dist/default/debug\Interfacing.debug.o
+__Hramtop 1000 0 RAM 0 ramtop dist/default/debug\Interfacing.debug.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/debug\Interfacing.debug.o
+__activetblptr 2 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\Interfacing.debug.o
+_gpio_pin_initialization 16CA 0 CODE 0 text7 dist/default/debug\Interfacing.debug.o
+__Htext10 0 0 ABS 0 text10 dist/default/debug\Interfacing.debug.o
+__end_of_button_initialize 17AA 0 CODE 0 text9 dist/default/debug\Interfacing.debug.o
+_led_initialize 1520 0 CODE 0 text6 dist/default/debug\Interfacing.debug.o
+__end_of_gpio_pin_initialization 171E 0 CODE 0 text7 dist/default/debug\Interfacing.debug.o
+__ptext10 11B2 0 CODE 0 text10 dist/default/debug\Interfacing.debug.o
+_gpio_pin_direction_initialization 11B2 0 CODE 0 text10 dist/default/debug\Interfacing.debug.o
+__Lbank10 0 0 ABS 0 bank10 dist/default/debug\Interfacing.debug.o
+__Lbank11 0 0 ABS 0 bank11 dist/default/debug\Interfacing.debug.o
+__Lbank12 0 0 ABS 0 bank12 dist/default/debug\Interfacing.debug.o
+__Lbank13 0 0 ABS 0 bank13 dist/default/debug\Interfacing.debug.o
+__Lbank14 0 0 ABS 0 bank14 dist/default/debug\Interfacing.debug.o
+__Lbank15 0 0 ABS 0 bank15 dist/default/debug\Interfacing.debug.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\Interfacing.debug.o
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\Interfacing.debug.o
+__Lbigsfr 0 0 ABS 0 bigsfr dist/default/debug\Interfacing.debug.o
+__Lcomram 0 0 ABS 0 comram dist/default/debug\Interfacing.debug.o
+__Lconfig 0 0 CONFIG 4 config dist/default/debug\Interfacing.debug.o
+__Lsivt_hi 2 0 CODE 0 sivt_hi dist/default/debug\Interfacing.debug.o
+__Lsivt_lo 2 0 CODE 0 sivt_lo dist/default/debug\Interfacing.debug.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\Interfacing.debug.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\Interfacing.debug.o
+isa$std 1 0 ABS 0 - C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+_btn_low_valid 3F 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+stackhi 0 0 ABS 0 - C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__Lintcode 2 0 CODE 0 intcode dist/default/debug\Interfacing.debug.o
+__Lintret 0 0 ABS 0 intret dist/default/debug\Interfacing.debug.o
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\Interfacing.debug.o
+__Lspace_0 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Lspace_1 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Lspace_2 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Lspace_4 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__pbssCOMRAM 3F 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+__end_of_led_initialize 1590 0 CODE 0 text6 dist/default/debug\Interfacing.debug.o
+button_read_state@btn 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+button_read_state@ret 3A 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+_btn_high_last_valid_status 21 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_btn_low 23 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_gpio_pin_write_logic 12C4 0 CODE 0 text8 dist/default/debug\Interfacing.debug.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+end_of_initialization 174A 0 CODE 0 cinit dist/default/debug\Interfacing.debug.o
+button_read_state@btn_state 38 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\Interfacing.debug.o
+__Hintentry 0 0 ABS 0 intentry dist/default/debug\Interfacing.debug.o
+led_turn_off@F3153 45 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+__Hreset_vec 2 0 CODE 0 reset_vec dist/default/debug\Interfacing.debug.o
+__Lramtop 1000 0 RAM 0 ramtop dist/default/debug\Interfacing.debug.o
+_button_initialize 1784 0 CODE 0 text9 dist/default/debug\Interfacing.debug.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/debug\Interfacing.debug.o
+__pcinit 171E 0 CODE 0 cinit dist/default/debug\Interfacing.debug.o
+__ptext0 1002 0 CODE 0 text0 dist/default/debug\Interfacing.debug.o
+__ptext1 1590 0 CODE 0 text1 dist/default/debug\Interfacing.debug.o
+__ptext2 15FA 0 CODE 0 text2 dist/default/debug\Interfacing.debug.o
+__ptext3 13D4 0 CODE 0 text3 dist/default/debug\Interfacing.debug.o
+__ptext4 1486 0 CODE 0 text4 dist/default/debug\Interfacing.debug.o
+__ptext5 1664 0 CODE 0 text5 dist/default/debug\Interfacing.debug.o
+__ptext6 1520 0 CODE 0 text6 dist/default/debug\Interfacing.debug.o
+__ptext7 16CA 0 CODE 0 text7 dist/default/debug\Interfacing.debug.o
+__ptext8 12C4 0 CODE 0 text8 dist/default/debug\Interfacing.debug.o
+__ptext9 1784 0 CODE 0 text9 dist/default/debug\Interfacing.debug.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\Interfacing.debug.o
+__Ltext10 0 0 ABS 0 text10 dist/default/debug\Interfacing.debug.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__Lpowerup 2 0 CODE 0 powerup dist/default/debug\Interfacing.debug.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Interfacing.debug.o
+__H__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\Interfacing.debug.o
+__psmallconst 1000 0 SMALLCONST 0 smallconst dist/default/debug\Interfacing.debug.o
+led_turn_on@F3148 46 0 COMRAM 1 bssCOMRAM dist/default/debug\Interfacing.debug.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\Interfacing.debug.o
+___heap_hi 0 0 ABS 0 - C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__end_of_gpio_pin_direction_initialization 12C4 0 CODE 0 text10 dist/default/debug\Interfacing.debug.o
+___param_bank 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\LEGION\AppData\Local\Temp\xcAsn70.\driver_tmp_9.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\Interfacing.debug.o
+__end_of__initialization 174A 0 CODE 0 cinit dist/default/debug\Interfacing.debug.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\Interfacing.debug.o
+gpio_pin_direction_initialization@pin_config 31 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\Interfacing.debug.o
+__pcstackCOMRAM 31 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+led_turn_off@led 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\Interfacing.debug.o
+__end_of_main 11B2 0 CODE 0 text0 dist/default/debug\Interfacing.debug.o
+_tris_registers 15 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_PORTA F80 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_PORTB F81 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_PORTC F82 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_PORTD F83 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_PORTE F84 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_TRISA F92 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_TRISB F93 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_TRISC F94 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_TRISD F95 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+_TRISE F96 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__end_of_led_turn_on 15FA 0 CODE 0 text1 dist/default/debug\Interfacing.debug.o
+__HRAM 0 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Hbss 0 0 RAM 1 bss dist/default/debug\Interfacing.debug.o
+__Hram 0 0 ABS 0 ram dist/default/debug\Interfacing.debug.o
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\Interfacing.debug.o
+__LRAM 1 0 ABS 0 - dist/default/debug\Interfacing.debug.o
+__Lbss 0 0 RAM 1 bss dist/default/debug\Interfacing.debug.o
+__Lram 0 0 ABS 0 ram dist/default/debug\Interfacing.debug.o
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\Interfacing.debug.o
+_led_1 30 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_led_2 2F 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_led_3 2E 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_led_4 2D 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_led_5 2C 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_led_6 2B 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_led_7 2A 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+_led_8 29 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+__Hsivt_hi 2 0 CODE 0 sivt_hi dist/default/debug\Interfacing.debug.o
+__Hsivt_lo 2 0 CODE 0 sivt_lo dist/default/debug\Interfacing.debug.o
+__initialization 171E 0 CODE 0 cinit dist/default/debug\Interfacing.debug.o
+__pdataCOMRAM 1 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\Interfacing.debug.o
+__Hsmallconst 1002 0 SMALLCONST 0 smallconst dist/default/debug\Interfacing.debug.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\Interfacing.debug.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\Interfacing.debug.o
+__Hintcode 2 0 CODE 0 intcode dist/default/debug\Interfacing.debug.o
+_btn_low_valid_status 20 0 COMRAM 1 dataCOMRAM dist/default/debug\Interfacing.debug.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text0 0 1002 1002 7A8 1
+reset_vec 0 0 0 6 1
+smallconst 0 1000 1000 2 1
+dataCOMRAM 1 1 1 4A 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
