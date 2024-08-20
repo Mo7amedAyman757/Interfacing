@@ -1,0 +1,61 @@
+#define HWREG(_x) (*((volatile unsigned char *)(_x)))
+
+#define AHMED_LATC (HWREG(0xf8B))  // LATC
+
+#define AHMED_TRISC (HWREG(0xf94)) //PORTC
+
+#define _XTAL_FREQ 8000000
+
+
+typedef union {
+    struct{
+        unsigned SELF_LATC0 :1;
+        unsigned SELF_LATC1 :1;
+        unsigned SELF_LATC2 :1;
+        unsigned SELF_LATC3 :1;
+        unsigned SELF_LATC4 :1;
+        unsigned SELF_LATC5 :1;
+        unsigned SELF_LATC6 :1;
+        unsigned SELF_LATC7 :1;
+    };
+    unsigned int LATC_REGISTER;
+}SELF_LATC;
+
+typedef union {
+    struct{
+        unsigned SELF_SSPM  : 4;
+        unsigned SELF_CKP   : 1;
+        unsigned SELF_SSPEN : 1;
+        unsigned SELF_SSPOV : 1;
+        unsigned SELF_WCOL  : 1;
+    };
+    unsigned int SSPCON1_REGISTER;
+}SELF_SSPCON1;
+
+#define SELF_LATC_REG ((volatile SELF_LATC *)0xF8B)
+
+#define D_SELF_LATC_REG (*((volatile SELF_LATC *)0xF8B))
+
+#define SELF_SSPCON1_REG ((volatile SELF_SSPCON1 *)0xFC6)
+
+#define D_SELF_SSPCON1_REG (*((volatile SELF_SSPCON1 *)0xFC6))
+
+
+int main() {
+    AHMED_TRISC = 0x00; // 0000 0000
+    
+    SELF_LATC_REG->SELF_LATC0 = 1;
+    __delay_ms(2000);
+    SELF_LATC_REG->LATC_REGISTER = 0x55;
+    __delay_ms(2000);
+    D_SELF_LATC_REG.SELF_LATC6 = 0;
+    
+    SELF_SSPCON1_REG->SSPCON1_REGISTER = 0x55;
+    __delay_ms(2000);
+    D_SELF_SSPCON1_REG.SELF_SSPM = 4;
+    while(1){
+        
+    }    
+    return (EXIT_SUCCESS);
+}
+
