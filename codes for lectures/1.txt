@@ -1,0 +1,76 @@
+#define HWREG(_x) (*((volatile unsigned char *)(_x)))
+
+#define AHMED_LATC (HWREG(0xf8B))  // LATC
+
+#define AHMED_TRISC (HWREG(0xf94)) //PORTC
+
+#define _XTAL_FREQ 8000000
+
+#define AHMED_SET_BIT(REG,BIT_POS)  (REG |= (1 << BIT_POS))
+
+#define AHMED_CLEAR_BIT(REG,BIT_POS)  (REG &= ~(1 << BIT_POS))
+
+#define AHMED_TOGGLE_BIT(REG,BIT_POS)  (REG ^= (1 << BIT_POS))
+
+
+
+
+int main() {
+    AHMED_TRISC = 0x00;
+    AHMED_LATC = 0x55;
+    __delay_ms(2000);
+    
+     AHMED_CLEAR_BIT(AHMED_LATC,_LATC_LATC0_POSN);
+     __delay_ms(2000);
+    AHMED_TOGGLE_BIT( AHMED_LATC,_LATC_LATC7_POSN);
+    __delay_ms(2000);
+    AHMED_SET_BIT(AHMED_LATC,_LATC_LATC1_POSN);
+    __delay_ms(2000);
+   
+    
+    // set a specific bit  
+     //AHMED_LATC |= (1 << _LATC_LATC1_POSN );
+     AHMED_SET_BIT(AHMED_LATC,_LATC_LATC1_POSN);
+     __delay_ms(2000);
+     AHMED_LATC |= (1 << _LATC_LATC3_POSN );
+      __delay_ms(2000);
+     AHMED_LATC |= (1 << _LATC_LATC5_POSN );
+      __delay_ms(2000);
+     AHMED_LATC |= (1 << _LATC_LATC7_POSN );
+     
+     
+     // clear specific bit
+      __delay_ms(2000);
+     //AHMED_LATC &= ~(1 << _LATC_LATC3_POSN );
+     AHMED_CLEAR_BIT(AHMED_LATC,_LATC_LATC3_POSN);
+      __delay_ms(2000);
+     AHMED_LATC &= ~(1 << _LATC_LATC1_POSN );
+      __delay_ms(2000);
+     AHMED_LATC &= ~(1 << _LATC_LATC7_POSN );
+      __delay_ms(2000);
+     AHMED_LATC &= ~(1 << _LATC_LATC5_POSN );
+     
+     // toggle specific bit
+      __delay_ms(2000);
+     //AHMED_LATC ^= (1 << _LATC_LATC3_POSN );
+     AHMED_TOGGLE_BIT( AHMED_LATC,_LATC_LATC3_POSN);
+    
+     /*
+    while(1){
+        AHMED_LATC = 0x00;
+        __delay_ms(2000);
+        AHMED_LATC |= (_LATC_LATC0_MASK   | _LATC_LATC7_MASK);
+        __delay_ms(2000);
+         AHMED_LATC |= (_LATC_LATC1_MASK   | _LATC_LATC6_MASK);
+        __delay_ms(2000);
+         AHMED_LATC |= (_LATC_LATC2_MASK   | _LATC_LATC5_MASK);
+        __delay_ms(2000);
+         AHMED_LATC |= (_LATC_LATC3_MASK   | _LATC_LATC4_MASK);
+        __delay_ms(2000);
+    } 
+      */
+    return (EXIT_SUCCESS);
+}
+
+
+      */
