@@ -1,52 +1,39 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"25 ./ECU_Layer/LED/ecu_led_cfg.h
-[; ;./ECU_Layer/LED/ecu_led_cfg.h: 25: typedef struct {
-[s S306 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S306 . port_name pin led_status ]
-"13 application.c
-[; ;application.c: 13: led_t led_1 = {
+"64 ./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h
+[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S305 . port pin direction logic ]
+"24 ./ECU_Layer/DC_Motor/ecu_motor.h
+[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 24: typedef struct {
+[s S309 `S305 -> 2 `i ]
+[n S309 . dc_motor ]
+"11 application.c
+[; ;application.c: 11: dc_motor_t dc_motor_1 = {
 [c E3071 0 1 2 3 4 .. ]
 [n E3071 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
 [c E3078 0 1 2 3 4 5 6 7 .. ]
 [n E3078 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E3063 0 1 .. ]
-[n E3063 . GPIO_LOW GPIO_HIGH  ]
-"64 ./ECU_Layer/button/../../MCAL_Layer/GPIO/hal_gpio.h
-[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S305 . port pin direction logic ]
-"60 application.c
-[; ;application.c: 60: button_t btn_high = {
-[c E3140 0 1 .. ]
-[n E3140 . BUTTON_PRESSED BUTTON_RELEASED  ]
-[c E3144 0 1 .. ]
-[n E3144 . BUTTON_ACTIVE_HIGH BUTTON_ACTIVE_LOW  ]
-"31 ./ECU_Layer/button/ecu_button.h
-[; ;./ECU_Layer/button/ecu_button.h: 31: typedef struct {
-[s S307 `S305 1 `E3140 1 `E3144 1 ]
-[n S307 . button_pin button_state button_connection ]
-"60 application.c
-[; ;application.c: 60: button_t btn_high = {
 [c E3067 0 1 .. ]
 [n E3067 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
 [p mainexit ]
-"24 ./application.h
-[; ;./application.h: 24: void application_initialize(void);
+"26 ./application.h
+[; ;./application.h: 26: void application_initialize(void);
 [v _application_initialize `(v ~T0 @X0 0 ef ]
-"38 ./ECU_Layer/button/ecu_button.h
-[; ;./ECU_Layer/button/ecu_button.h: 38: STD_ReturnType button_read_state(const button_t *btn, button_state_t *btn_state);
-[v _button_read_state `(uc ~T0 @X0 0 ef2`*CS307`*E3140 ]
-"26 ./ECU_Layer/LED/ecu_led.h
-[; ;./ECU_Layer/LED/ecu_led.h: 26: STD_ReturnType led_turn_on(const led_t *led);
-[v _led_turn_on `(uc ~T0 @X0 0 ef1`*CS306 ]
-"27
-[; ;./ECU_Layer/LED/ecu_led.h: 27: STD_ReturnType led_turn_off(const led_t *led);
-[v _led_turn_off `(uc ~T0 @X0 0 ef1`*CS306 ]
-"25
-[; ;./ECU_Layer/LED/ecu_led.h: 25: STD_ReturnType led_initialize(const led_t *led);
-[v _led_initialize `(uc ~T0 @X0 0 ef1`*CS306 ]
-"37 ./ECU_Layer/button/ecu_button.h
-[; ;./ECU_Layer/button/ecu_button.h: 37: STD_ReturnType button_initialize(const button_t *btn);
-[v _button_initialize `(uc ~T0 @X0 0 ef1`*CS307 ]
+"30 ./ECU_Layer/DC_Motor/ecu_motor.h
+[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 30: STD_ReturnType dc_motor_move_right(const dc_motor_t *dc_motor);
+[v _dc_motor_move_right `(uc ~T0 @X0 0 ef1`*CS309 ]
+[v F526 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF526 ~T0 @X0 0 e ]
+[p i __delay ]
+"31 ./ECU_Layer/DC_Motor/ecu_motor.h
+[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 31: STD_ReturnType dc_motor_move_left(const dc_motor_t *dc_motor);
+[v _dc_motor_move_left `(uc ~T0 @X0 0 ef1`*CS309 ]
+"32
+[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 32: STD_ReturnType dc_motor_stop(const dc_motor_t *dc_motor);
+[v _dc_motor_stop `(uc ~T0 @X0 0 ef1`*CS309 ]
+"29
+[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 29: STD_ReturnType dc_motor_initialize(const dc_motor_t *dc_motor);
+[v _dc_motor_initialize `(uc ~T0 @X0 0 ef1`*CS309 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -488,439 +475,123 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 application.c
-[; ;application.c: 13: led_t led_1 = {
-[v _led_1 `S306 ~T0 @X0 1 e ]
-[i _led_1
+"11 application.c
+[; ;application.c: 11: dc_motor_t dc_motor_1 = {
+[v _dc_motor_1 `S309 ~T0 @X0 1 e ]
+[i _dc_motor_1
+:U ..
+:U ..
 :U ..
 :U ..
 -> . `E3071 2 `uc
 -> . `E3078 0 `uc
--> . `E3063 0 `uc
+-> . `E3067 0 `uc
+-> -> 0 `ui `uc
 ..
-..
-]
-"19
-[; ;application.c: 19: led_t led_2 = {
-[v _led_2 `S306 ~T0 @X0 1 e ]
-[i _led_2
-:U ..
 :U ..
 -> . `E3071 2 `uc
 -> . `E3078 1 `uc
--> . `E3063 0 `uc
+-> . `E3067 0 `uc
+-> -> 0 `ui `uc
+..
+..
 ..
 ..
 ]
-"25
-[; ;application.c: 25: led_t led_3 = {
-[v _led_3 `S306 ~T0 @X0 1 e ]
-[i _led_3
+"22
+[; ;application.c: 22: dc_motor_t dc_motor_2 = {
+[v _dc_motor_2 `S309 ~T0 @X0 1 e ]
+[i _dc_motor_2
+:U ..
+:U ..
 :U ..
 :U ..
 -> . `E3071 2 `uc
 -> . `E3078 2 `uc
--> . `E3063 0 `uc
+-> . `E3067 0 `uc
+-> -> 0 `ui `uc
 ..
-..
-]
-"31
-[; ;application.c: 31: led_t led_4 = {
-[v _led_4 `S306 ~T0 @X0 1 e ]
-[i _led_4
-:U ..
 :U ..
 -> . `E3071 2 `uc
 -> . `E3078 3 `uc
--> . `E3063 0 `uc
+-> . `E3067 0 `uc
+-> -> 0 `ui `uc
+..
+..
 ..
 ..
 ]
-"37
-[; ;application.c: 37: led_t led_5 = {
-[v _led_5 `S306 ~T0 @X0 1 e ]
-[i _led_5
-:U ..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 4 `uc
--> . `E3063 0 `uc
-..
-..
-]
-"43
-[; ;application.c: 43: led_t led_6 = {
-[v _led_6 `S306 ~T0 @X0 1 e ]
-[i _led_6
-:U ..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 5 `uc
--> . `E3063 0 `uc
-..
-..
-]
-"49
-[; ;application.c: 49: led_t led_7 = {
-[v _led_7 `S306 ~T0 @X0 1 e ]
-[i _led_7
-:U ..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 6 `uc
--> . `E3063 0 `uc
-..
-..
-]
-"54
-[; ;application.c: 54: led_t led_8 = {
-[v _led_8 `S306 ~T0 @X0 1 e ]
-[i _led_8
-:U ..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 7 `uc
--> . `E3063 0 `uc
-..
-..
-]
-"60
-[; ;application.c: 60: button_t btn_high = {
-[v _btn_high `S307 ~T0 @X0 1 e ]
-[i _btn_high
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3071 3 `uc
--> . `E3078 0 `uc
--> . `E3067 1 `uc
--> . `E3063 0 `uc
-..
-..
-. `E3140 1
-. `E3144 0
-..
-..
-]
-"69
-[; ;application.c: 69: button_t btn_low = {
-[v _btn_low `S307 ~T0 @X0 1 e ]
-[i _btn_low
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3071 3 `uc
--> . `E3078 1 `uc
--> . `E3067 1 `uc
--> . `E3063 1 `uc
-..
-..
-. `E3140 1
-. `E3144 1
-..
-..
-]
-"78
-[; ;application.c: 78: STD_ReturnType ret = (STD_ReturnType)0x00;
+"33
+[; ;application.c: 33: STD_ReturnType ret = (STD_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 e ]
 [i _ret
--> -> 0 `i `uc
-]
-"80
-[; ;application.c: 80: button_state_t btn_status_high;
-[v _btn_status_high `E3140 ~T0 @X0 1 e ]
-"81
-[; ;application.c: 81: button_state_t btn_status_low;
-[v _btn_status_low `E3140 ~T0 @X0 1 e ]
-"83
-[; ;application.c: 83: uint8 flag = 0;
-[v _flag `uc ~T0 @X0 1 e ]
-[i _flag
--> -> 0 `i `uc
-]
-"84
-[; ;application.c: 84: uint32 btn_high_valid = 0;
-[v _btn_high_valid `ui ~T0 @X0 1 e ]
-[i _btn_high_valid
--> -> 0 `i `ui
-]
-"85
-[; ;application.c: 85: button_state_t btn_high_valid_status = BUTTON_RELEASED;
-[v _btn_high_valid_status `E3140 ~T0 @X0 1 e ]
-[i _btn_high_valid_status
-. `E3140 1
-]
-"86
-[; ;application.c: 86: button_state_t btn_high_last_valid_status = BUTTON_RELEASED;
-[v _btn_high_last_valid_status `E3140 ~T0 @X0 1 e ]
-[i _btn_high_last_valid_status
-. `E3140 1
-]
-"88
-[; ;application.c: 88: uint32 btn_low_valid = 0;
-[v _btn_low_valid `ui ~T0 @X0 1 e ]
-[i _btn_low_valid
--> -> 0 `i `ui
-]
-"89
-[; ;application.c: 89: button_state_t btn_low_valid_status = BUTTON_RELEASED;
-[v _btn_low_valid_status `E3140 ~T0 @X0 1 e ]
-[i _btn_low_valid_status
-. `E3140 1
-]
-"90
-[; ;application.c: 90: button_state_t btn_low_last_valid_status = BUTTON_RELEASED;
-[v _btn_low_last_valid_status `E3140 ~T0 @X0 1 e ]
-[i _btn_low_last_valid_status
-. `E3140 1
+-> -> 1 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"92
-[; ;application.c: 92: int main() {
+"35
+[; ;application.c: 35: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"94
-[; ;application.c: 94:     application_initialize();
+"37
+[; ;application.c: 37:     application_initialize();
 [e ( _application_initialize ..  ]
-"96
-[; ;application.c: 96:     while (1) {
-[e :U 310 ]
-{
-"97
-[; ;application.c: 97:         ret = button_read_state(&btn_high, &btn_status_high);
-[e = _ret ( _button_read_state (2 , -> &U _btn_high `*CS307 &U _btn_status_high ]
-"98
-[; ;application.c: 98:         ret = button_read_state(&btn_low, &btn_status_low);
-[e = _ret ( _button_read_state (2 , -> &U _btn_low `*CS307 &U _btn_status_low ]
-"119
-[; ;application.c: 119:         if (BUTTON_PRESSED == btn_status_high) {
-[e $ ! == -> . `E3140 0 `ui -> _btn_status_high `ui 312  ]
-{
-"120
-[; ;application.c: 120:             btn_high_valid++;
-[e ++ _btn_high_valid -> -> 1 `i `ui ]
-"121
-[; ;application.c: 121:             if (btn_high_valid > 500) {
-[e $ ! > _btn_high_valid -> -> 500 `i `ui 313  ]
-{
-"122
-[; ;application.c: 122:                 btn_high_valid_status = BUTTON_PRESSED;
-[e = _btn_high_valid_status . `E3140 0 ]
-"123
-[; ;application.c: 123:             }
-}
-[e :U 313 ]
-"125
-[; ;application.c: 125:         } else {
-}
-[e $U 314  ]
+"39
+[; ;application.c: 39:     while (1) {
 [e :U 312 ]
 {
-"126
-[; ;application.c: 126:             btn_high_valid = 0;
-[e = _btn_high_valid -> -> 0 `i `ui ]
-"127
-[; ;application.c: 127:             btn_high_valid_status = BUTTON_RELEASED;
-[e = _btn_high_valid_status . `E3140 1 ]
-"128
-[; ;application.c: 128:         }
+"41
+[; ;application.c: 41:         ret = dc_motor_move_right(&dc_motor_1);
+[e = _ret ( _dc_motor_move_right (1 -> &U _dc_motor_1 `*CS309 ]
+"42
+[; ;application.c: 42:         ret = dc_motor_move_right(&dc_motor_2);
+[e = _ret ( _dc_motor_move_right (1 -> &U _dc_motor_2 `*CS309 ]
+"44
+[; ;application.c: 44:         _delay((unsigned long)((2000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"46
+[; ;application.c: 46:         ret = dc_motor_move_left(&dc_motor_1);
+[e = _ret ( _dc_motor_move_left (1 -> &U _dc_motor_1 `*CS309 ]
+"47
+[; ;application.c: 47:         ret = dc_motor_move_left(&dc_motor_2);
+[e = _ret ( _dc_motor_move_left (1 -> &U _dc_motor_2 `*CS309 ]
+"49
+[; ;application.c: 49:         _delay((unsigned long)((2000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"51
+[; ;application.c: 51:         ret = dc_motor_stop(&dc_motor_1);
+[e = _ret ( _dc_motor_stop (1 -> &U _dc_motor_1 `*CS309 ]
+"52
+[; ;application.c: 52:         ret = dc_motor_stop(&dc_motor_2);
+[e = _ret ( _dc_motor_stop (1 -> &U _dc_motor_2 `*CS309 ]
+"53
+[; ;application.c: 53:     }
 }
-[e :U 314 ]
-"130
-[; ;application.c: 130:         if (btn_high_valid_status != btn_high_last_valid_status) {
-[e $ ! != -> _btn_high_valid_status `ui -> _btn_high_last_valid_status `ui 315  ]
-{
-"131
-[; ;application.c: 131:             btn_high_last_valid_status = btn_high_valid_status;
-[e = _btn_high_last_valid_status _btn_high_valid_status ]
-"132
-[; ;application.c: 132:             if ((BUTTON_PRESSED == btn_high_valid_status) && (0 == flag)) {
-[e $ ! && == -> . `E3140 0 `ui -> _btn_high_valid_status `ui == -> 0 `i -> _flag `i 316  ]
-{
-"133
-[; ;application.c: 133:                 led_turn_on(&led_1);
-[e ( _led_turn_on (1 -> &U _led_1 `*CS306 ]
-"134
-[; ;application.c: 134:                 led_turn_on(&led_2);
-[e ( _led_turn_on (1 -> &U _led_2 `*CS306 ]
-"135
-[; ;application.c: 135:                 led_turn_on(&led_3);
-[e ( _led_turn_on (1 -> &U _led_3 `*CS306 ]
-"136
-[; ;application.c: 136:                 led_turn_on(&led_4);
-[e ( _led_turn_on (1 -> &U _led_4 `*CS306 ]
-"137
-[; ;application.c: 137:                 flag = 1;
-[e = _flag -> -> 1 `i `uc ]
-"138
-[; ;application.c: 138:             } else if ((BUTTON_PRESSED == btn_high_valid_status) && (1 == flag)) {
-}
-[e $U 317  ]
-[e :U 316 ]
-[e $ ! && == -> . `E3140 0 `ui -> _btn_high_valid_status `ui == -> 1 `i -> _flag `i 318  ]
-{
-"139
-[; ;application.c: 139:                 led_turn_off(&led_1);
-[e ( _led_turn_off (1 -> &U _led_1 `*CS306 ]
-"140
-[; ;application.c: 140:                 led_turn_off(&led_2);
-[e ( _led_turn_off (1 -> &U _led_2 `*CS306 ]
-"141
-[; ;application.c: 141:                 led_turn_off(&led_3);
-[e ( _led_turn_off (1 -> &U _led_3 `*CS306 ]
-"142
-[; ;application.c: 142:                 led_turn_off(&led_4);
-[e ( _led_turn_off (1 -> &U _led_4 `*CS306 ]
-"143
-[; ;application.c: 143:                 flag = 0;
-[e = _flag -> -> 0 `i `uc ]
-"144
-[; ;application.c: 144:             }
-}
-[e :U 318 ]
-[e :U 317 ]
-"145
-[; ;application.c: 145:         }
-}
-[e :U 315 ]
-"147
-[; ;application.c: 147:         if (BUTTON_PRESSED == btn_status_low) {
-[e $ ! == -> . `E3140 0 `ui -> _btn_status_low `ui 319  ]
-{
-"148
-[; ;application.c: 148:             btn_low_valid++;
-[e ++ _btn_low_valid -> -> 1 `i `ui ]
-"149
-[; ;application.c: 149:             if (btn_low_valid > 200) {
-[e $ ! > _btn_low_valid -> -> 200 `i `ui 320  ]
-{
-"150
-[; ;application.c: 150:                 btn_low_valid_status = BUTTON_PRESSED;
-[e = _btn_low_valid_status . `E3140 0 ]
-"151
-[; ;application.c: 151:             }
-}
-[e :U 320 ]
-"153
-[; ;application.c: 153:         } else {
-}
-[e $U 321  ]
-[e :U 319 ]
-{
-"154
-[; ;application.c: 154:             btn_low_valid = 0;
-[e = _btn_low_valid -> -> 0 `i `ui ]
-"155
-[; ;application.c: 155:             btn_low_valid_status = BUTTON_RELEASED;
-[e = _btn_low_valid_status . `E3140 1 ]
-"156
-[; ;application.c: 156:         }
-}
-[e :U 321 ]
-"158
-[; ;application.c: 158:         if (btn_low_valid_status != btn_low_last_valid_status) {
-[e $ ! != -> _btn_low_valid_status `ui -> _btn_low_last_valid_status `ui 322  ]
-{
-"159
-[; ;application.c: 159:             btn_low_last_valid_status = btn_low_valid_status;
-[e = _btn_low_last_valid_status _btn_low_valid_status ]
-"160
-[; ;application.c: 160:             if (BUTTON_PRESSED == btn_low_valid_status) {
-[e $ ! == -> . `E3140 0 `ui -> _btn_low_valid_status `ui 323  ]
-{
-"161
-[; ;application.c: 161:                 led_turn_on(&led_5);
-[e ( _led_turn_on (1 -> &U _led_5 `*CS306 ]
-"162
-[; ;application.c: 162:                 led_turn_on(&led_6);
-[e ( _led_turn_on (1 -> &U _led_6 `*CS306 ]
-"163
-[; ;application.c: 163:                 led_turn_on(&led_7);
-[e ( _led_turn_on (1 -> &U _led_7 `*CS306 ]
-"164
-[; ;application.c: 164:                 led_turn_on(&led_8);
-[e ( _led_turn_on (1 -> &U _led_8 `*CS306 ]
-"166
-[; ;application.c: 166:             } else {
-}
-[e $U 324  ]
-[e :U 323 ]
-{
-"167
-[; ;application.c: 167:                 led_turn_off(&led_5);
-[e ( _led_turn_off (1 -> &U _led_5 `*CS306 ]
-"168
-[; ;application.c: 168:                 led_turn_off(&led_6);
-[e ( _led_turn_off (1 -> &U _led_6 `*CS306 ]
-"169
-[; ;application.c: 169:                 led_turn_off(&led_7);
-[e ( _led_turn_off (1 -> &U _led_7 `*CS306 ]
-"170
-[; ;application.c: 170:                 led_turn_off(&led_8);
-[e ( _led_turn_off (1 -> &U _led_8 `*CS306 ]
-"171
-[; ;application.c: 171:             }
-}
-[e :U 324 ]
-"172
-[; ;application.c: 172:         }
-}
-[e :U 322 ]
-"200
-[; ;application.c: 200:     }
-}
-[e :U 309 ]
-[e $U 310  ]
 [e :U 311 ]
-"201
-[; ;application.c: 201:     return (0);
+[e $U 312  ]
+[e :U 313 ]
+"54
+[; ;application.c: 54:     return (0);
 [e ) -> 0 `i ]
-[e $UE 308  ]
-"202
-[; ;application.c: 202: }
-[e :UE 308 ]
+[e $UE 310  ]
+"55
+[; ;application.c: 55: }
+[e :UE 310 ]
 }
-"204
-[; ;application.c: 204: void application_initialize(void) {
+"57
+[; ;application.c: 57: void application_initialize(void) {
 [v _application_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_initialize ]
 [f ]
-"206
-[; ;application.c: 206:     ret = led_initialize(&led_1);
-[e = _ret ( _led_initialize (1 -> &U _led_1 `*CS306 ]
-"207
-[; ;application.c: 207:     ret = led_initialize(&led_2);
-[e = _ret ( _led_initialize (1 -> &U _led_2 `*CS306 ]
-"208
-[; ;application.c: 208:     ret = led_initialize(&led_3);
-[e = _ret ( _led_initialize (1 -> &U _led_3 `*CS306 ]
-"209
-[; ;application.c: 209:     ret = led_initialize(&led_4);
-[e = _ret ( _led_initialize (1 -> &U _led_4 `*CS306 ]
-"210
-[; ;application.c: 210:     ret = led_initialize(&led_5);
-[e = _ret ( _led_initialize (1 -> &U _led_5 `*CS306 ]
-"211
-[; ;application.c: 211:     ret = led_initialize(&led_6);
-[e = _ret ( _led_initialize (1 -> &U _led_6 `*CS306 ]
-"212
-[; ;application.c: 212:     ret = led_initialize(&led_7);
-[e = _ret ( _led_initialize (1 -> &U _led_7 `*CS306 ]
-"213
-[; ;application.c: 213:     ret = led_initialize(&led_8);
-[e = _ret ( _led_initialize (1 -> &U _led_8 `*CS306 ]
-"215
-[; ;application.c: 215:     ret = button_initialize(&btn_high);
-[e = _ret ( _button_initialize (1 -> &U _btn_high `*CS307 ]
-"216
-[; ;application.c: 216:     ret = button_initialize(&btn_low);
-[e = _ret ( _button_initialize (1 -> &U _btn_low `*CS307 ]
-"218
-[; ;application.c: 218: }
-[e :UE 325 ]
+"59
+[; ;application.c: 59:     dc_motor_initialize(&dc_motor_1);
+[e ( _dc_motor_initialize (1 -> &U _dc_motor_1 `*CS309 ]
+"60
+[; ;application.c: 60:     dc_motor_initialize(&dc_motor_2);
+[e ( _dc_motor_initialize (1 -> &U _dc_motor_2 `*CS309 ]
+"61
+[; ;application.c: 61: }
+[e :UE 314 ]
 }

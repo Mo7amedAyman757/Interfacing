@@ -9,9 +9,17 @@
           <itemPath>ECU_Layer/button/ecu_button_cfg.h</itemPath>
           <itemPath>ECU_Layer/button/ecu_button.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
+          <itemPath>ECU_Layer/DC_Motor/ecu_motor.h</itemPath>
+          <itemPath>ECU_Layer/DC_Motor/ecu_motor_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_Layer/LED/ecu_led.h</itemPath>
           <itemPath>ECU_Layer/LED/ecu_led_cfg.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Relay" displayName="Relay" projectFiles="true">
+          <itemPath>ECU_Layer/Relay/ecu_relay.h</itemPath>
+          <itemPath>ECU_Layer/Relay/ecu_relay_cfg.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL_Layer" displayName="MCAL_Layer" projectFiles="true">
@@ -42,8 +50,14 @@
         <logicalFolder name="button" displayName="button" projectFiles="true">
           <itemPath>ECU_Layer/button/ecu_button.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
+          <itemPath>ECU_Layer/DC_Motor/ecu_motor.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_Layer/LED/ecu_led.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Relay" displayName="Relay" projectFiles="true">
+          <itemPath>ECU_Layer/Relay/ecu_relay.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL_Layer" displayName="MCAL_Layer" projectFiles="true">

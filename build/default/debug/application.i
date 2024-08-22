@@ -5230,171 +5230,94 @@ typedef struct {
 STD_ReturnType button_initialize(const button_t *btn);
 STD_ReturnType button_read_state(const button_t *btn, button_state_t *btn_state);
 # 13 "./application.h" 2
-# 24 "./application.h"
+
+# 1 "./ECU_Layer/Relay/ecu_relay.h" 1
+# 14 "./ECU_Layer/Relay/ecu_relay.h"
+# 1 "./ECU_Layer/Relay/ecu_relay_cfg.h" 1
+# 14 "./ECU_Layer/Relay/ecu_relay.h" 2
+# 24 "./ECU_Layer/Relay/ecu_relay.h"
+typedef struct {
+    uint8 relay_port : 4;
+    uint8 relay_pin : 3;
+    uint8 relay_status : 1;
+} relay_t;
+
+
+
+
+STD_ReturnType relay_initialize(const relay_t *_relay);
+STD_ReturnType relay_turn_on(const relay_t *_relay);
+STD_ReturnType relay_turn_off(const relay_t *_relay);
+# 14 "./application.h" 2
+
+# 1 "./ECU_Layer/DC_Motor/ecu_motor.h" 1
+# 13 "./ECU_Layer/DC_Motor/ecu_motor.h"
+# 1 "./ECU_Layer/DC_Motor/ecu_motor_cfg.h" 1
+# 13 "./ECU_Layer/DC_Motor/ecu_motor.h" 2
+# 24 "./ECU_Layer/DC_Motor/ecu_motor.h"
+typedef struct {
+    pin_config_t dc_motor[2];
+} dc_motor_t;
+
+
+STD_ReturnType dc_motor_initialize(const dc_motor_t *dc_motor);
+STD_ReturnType dc_motor_move_right(const dc_motor_t *dc_motor);
+STD_ReturnType dc_motor_move_left(const dc_motor_t *dc_motor);
+STD_ReturnType dc_motor_stop(const dc_motor_t *dc_motor);
+# 15 "./application.h" 2
+# 26 "./application.h"
 void application_initialize(void);
 # 9 "application.c" 2
 
 
-
-
-led_t led_1 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN0,
-    .led_status = GPIO_LOW
+dc_motor_t dc_motor_1 = {
+    .dc_motor[0].port = PORTC_INDEX,
+    .dc_motor[0].pin = GPIO_PIN0,
+    .dc_motor[0].direction = GPIO_DIRECTION_OUTPUT,
+    .dc_motor[0].logic = 0x00U,
+    .dc_motor[1].port = PORTC_INDEX,
+    .dc_motor[1].pin = GPIO_PIN1,
+    .dc_motor[1].direction = GPIO_DIRECTION_OUTPUT,
+    .dc_motor[1].logic = 0x00U,
 };
 
-led_t led_2 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN1,
-    .led_status = GPIO_LOW
+dc_motor_t dc_motor_2 = {
+    .dc_motor[0].port = PORTC_INDEX,
+    .dc_motor[0].pin = GPIO_PIN2,
+    .dc_motor[0].direction = GPIO_DIRECTION_OUTPUT,
+    .dc_motor[0].logic = 0x00U,
+    .dc_motor[1].port = PORTC_INDEX,
+    .dc_motor[1].pin = GPIO_PIN3,
+    .dc_motor[1].direction = GPIO_DIRECTION_OUTPUT,
+    .dc_motor[1].logic = 0x00U,
 };
 
-led_t led_3 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN2,
-    .led_status = GPIO_LOW
-};
-
-led_t led_4 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN3,
-    .led_status = GPIO_LOW
-};
-
-led_t led_5 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN4,
-    .led_status = GPIO_LOW
-};
-
-led_t led_6 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN5,
-    .led_status = GPIO_LOW
-};
-
-led_t led_7 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN6,
-    .led_status = GPIO_LOW
-};
-led_t led_8 = {
-    .port_name = PORTC_INDEX,
-    .pin = GPIO_PIN7,
-    .led_status = GPIO_LOW
-};
-
-button_t btn_high = {
-    .button_pin.port = PORTD_INDEX,
-    .button_pin.pin = GPIO_PIN0,
-    .button_pin.direction = GPIO_DIRECTION_INPUT,
-    .button_pin.logic = GPIO_LOW,
-    .button_connection = BUTTON_ACTIVE_HIGH,
-    .button_state = BUTTON_RELEASED
-};
-
-button_t btn_low = {
-    .button_pin.port = PORTD_INDEX,
-    .button_pin.pin = GPIO_PIN1,
-    .button_pin.direction = GPIO_DIRECTION_INPUT,
-    .button_pin.logic = GPIO_HIGH,
-    .button_connection = BUTTON_ACTIVE_LOW,
-    .button_state = BUTTON_RELEASED
-};
-
-STD_ReturnType ret = (STD_ReturnType)0x00;
-
-button_state_t btn_status_high;
-button_state_t btn_status_low;
-
-uint8 flag = 0;
-uint32 btn_high_valid = 0;
-button_state_t btn_high_valid_status = BUTTON_RELEASED;
-button_state_t btn_high_last_valid_status = BUTTON_RELEASED;
-
-uint32 btn_low_valid = 0;
-button_state_t btn_low_valid_status = BUTTON_RELEASED;
-button_state_t btn_low_last_valid_status = BUTTON_RELEASED;
+STD_ReturnType ret = (STD_ReturnType)0x01;
 
 int main() {
 
     application_initialize();
 
     while (1) {
-        ret = button_read_state(&btn_high, &btn_status_high);
-        ret = button_read_state(&btn_low, &btn_status_low);
-# 119 "application.c"
-        if (BUTTON_PRESSED == btn_status_high) {
-            btn_high_valid++;
-            if (btn_high_valid > 500) {
-                btn_high_valid_status = BUTTON_PRESSED;
-            }
 
-        } else {
-            btn_high_valid = 0;
-            btn_high_valid_status = BUTTON_RELEASED;
-        }
+        ret = dc_motor_move_right(&dc_motor_1);
+        ret = dc_motor_move_right(&dc_motor_2);
 
-        if (btn_high_valid_status != btn_high_last_valid_status) {
-            btn_high_last_valid_status = btn_high_valid_status;
-            if ((BUTTON_PRESSED == btn_high_valid_status) && (0 == flag)) {
-                led_turn_on(&led_1);
-                led_turn_on(&led_2);
-                led_turn_on(&led_3);
-                led_turn_on(&led_4);
-                flag = 1;
-            } else if ((BUTTON_PRESSED == btn_high_valid_status) && (1 == flag)) {
-                led_turn_off(&led_1);
-                led_turn_off(&led_2);
-                led_turn_off(&led_3);
-                led_turn_off(&led_4);
-                flag = 0;
-            }
-        }
+        _delay((unsigned long)((2000)*(8000000UL/4000.0)));
 
-        if (BUTTON_PRESSED == btn_status_low) {
-            btn_low_valid++;
-            if (btn_low_valid > 200) {
-                btn_low_valid_status = BUTTON_PRESSED;
-            }
+        ret = dc_motor_move_left(&dc_motor_1);
+        ret = dc_motor_move_left(&dc_motor_2);
 
-        } else {
-            btn_low_valid = 0;
-            btn_low_valid_status = BUTTON_RELEASED;
-        }
+        _delay((unsigned long)((2000)*(8000000UL/4000.0)));
 
-        if (btn_low_valid_status != btn_low_last_valid_status) {
-            btn_low_last_valid_status = btn_low_valid_status;
-            if (BUTTON_PRESSED == btn_low_valid_status) {
-                led_turn_on(&led_5);
-                led_turn_on(&led_6);
-                led_turn_on(&led_7);
-                led_turn_on(&led_8);
-
-            } else {
-                led_turn_off(&led_5);
-                led_turn_off(&led_6);
-                led_turn_off(&led_7);
-                led_turn_off(&led_8);
-            }
-        }
-# 200 "application.c"
+        ret = dc_motor_stop(&dc_motor_1);
+        ret = dc_motor_stop(&dc_motor_2);
     }
     return (0);
 }
 
 void application_initialize(void) {
 
-    ret = led_initialize(&led_1);
-    ret = led_initialize(&led_2);
-    ret = led_initialize(&led_3);
-    ret = led_initialize(&led_4);
-    ret = led_initialize(&led_5);
-    ret = led_initialize(&led_6);
-    ret = led_initialize(&led_7);
-    ret = led_initialize(&led_8);
-
-    ret = button_initialize(&btn_high);
-    ret = button_initialize(&btn_low);
-
+    dc_motor_initialize(&dc_motor_1);
+    dc_motor_initialize(&dc_motor_2);
 }
