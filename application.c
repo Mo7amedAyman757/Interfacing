@@ -8,29 +8,47 @@
 
 #include "application.h"
 
-dc_motor_t dc_motor_1 = {
-    .dc_motor[0].port = PORTC_INDEX,
-    .dc_motor[0].pin = GPIO_PIN0,
-    .dc_motor[0].direction = GPIO_DIRECTION_OUTPUT,
-    .dc_motor[0].logic = MOTOR_OFF_STATUS,
-    .dc_motor[1].port = PORTC_INDEX,
-    .dc_motor[1].pin = GPIO_PIN1,
-    .dc_motor[1].direction = GPIO_DIRECTION_OUTPUT,
-    .dc_motor[1].logic = MOTOR_OFF_STATUS,
+pin_config_t seg1_enable = {
+    .port = PORTD_INDEX,
+    .pin = GPIO_PIN0,
+    .direction = GPIO_DIRECTION_OUTPUT,
+    .logic = GPIO_LOW
 };
 
-dc_motor_t dc_motor_2 = {
-    .dc_motor[0].port = PORTC_INDEX,
-    .dc_motor[0].pin = GPIO_PIN2,
-    .dc_motor[0].direction = GPIO_DIRECTION_OUTPUT,
-    .dc_motor[0].logic = MOTOR_OFF_STATUS,
-    .dc_motor[1].port = PORTC_INDEX,
-    .dc_motor[1].pin = GPIO_PIN3,
-    .dc_motor[1].direction = GPIO_DIRECTION_OUTPUT,
-    .dc_motor[1].logic = MOTOR_OFF_STATUS,
+pin_config_t seg2_enable = {
+    .port = PORTD_INDEX,
+    .pin = GPIO_PIN1,
+    .direction = GPIO_DIRECTION_OUTPUT,
+    .logic = GPIO_LOW
 };
 
-STD_ReturnType ret = E_OK;
+segment_t seg1 = {
+    .segment_pins[0].port = PORTC_INDEX,
+    .segment_pins[0].pin = GPIO_PIN0,
+    .segment_pins[0].logic = GPIO_LOW,
+    .segment_pins[0].direction = GPIO_DIRECTION_OUTPUT,
+
+    .segment_pins[1].port = PORTC_INDEX,
+    .segment_pins[1].pin = GPIO_PIN1,
+    .segment_pins[1].logic = GPIO_LOW,
+    .segment_pins[1].direction = GPIO_DIRECTION_OUTPUT,
+
+    .segment_pins[2].port = PORTC_INDEX,
+    .segment_pins[2].pin = GPIO_PIN2,
+    .segment_pins[2].logic = GPIO_LOW,
+    .segment_pins[2].direction = GPIO_DIRECTION_OUTPUT,
+
+    .segment_pins[3].port = PORTC_INDEX,
+    .segment_pins[3].pin = GPIO_PIN3,
+    .segment_pins[3].logic = GPIO_LOW,
+    .segment_pins[3].direction = GPIO_DIRECTION_OUTPUT,
+
+    .segment_type = SEGMENT_COMMON_ANODE,
+};
+
+STD_ReturnType ret = E_NOK;
+
+uint8 number = 0, counter = 0;
 
 int main() {
 
@@ -38,32 +56,36 @@ int main() {
 
     while (1) {
 
-        ret = dc_motor_move_right(&dc_motor_1);
-        ret = dc_motor_move_right(&dc_motor_2);
+        for (counter = 0; counter <= 50; counter++) {
+            ret = seven_segment_write_number(&seg1, (uint8) (number % 10));
+            ret = gpio_pin_write_logic(&seg2_enable, GPIO_HIGH);
+            __delay_ms(10);
+            ret = gpio_pin_write_logic(&seg2_enable, GPIO_LOW);
 
-        __delay_ms(2000);
+            ret = seven_segment_write_number(&seg1, (uint8) (number / 10));
+            ret = gpio_pin_write_logic(&seg1_enable, GPIO_HIGH);
+            __delay_ms(10);
+            ret = gpio_pin_write_logic(&seg1_enable, GPIO_LOW);
+        }
+        number++;
+        if (number == 50) {
+            number = 0;
+        }
+        /*
+         for (uint8 number = 0; number <= 99; number++) {
+            ret = seven_segment_write_number(&seg1, number);
+            __delay_ms(500);
+        }
+         */
 
-        ret = dc_motor_stop(&dc_motor_1);
-        ret = dc_motor_stop(&dc_motor_2);
-
-        __delay_ms(2000);
-
-        ret = dc_motor_move_left(&dc_motor_1);
-        ret = dc_motor_move_left(&dc_motor_2);
-
-        __delay_ms(2000);
-
-        ret = dc_motor_stop(&dc_motor_1);
-        ret = dc_motor_stop(&dc_motor_2);
-
-        __delay_ms(2000);
     }
     return (EXIT_SUCCESS);
 }
 
 void application_initialize(void) {
 
-    dc_motor_initialize(&dc_motor_1);
-    dc_motor_initialize(&dc_motor_2);
+    ret = seven_segment_initialize(&seg1);
+    ret = gpio_pin_initialization(&seg1_enable);
+    ret = gpio_pin_initialization(&seg2_enable);
 }
 

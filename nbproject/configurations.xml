@@ -5,6 +5,10 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="ECU_Layer" displayName="ECU_Layer" projectFiles="true">
+        <logicalFolder name="7_segment" displayName="7_segment" projectFiles="true">
+          <itemPath>ECU_Layer/7_segment/ecu_seven_seg.h</itemPath>
+          <itemPath>ECU_Layer/7_segment/ecu_seven_seg_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="button" displayName="button" projectFiles="true">
           <itemPath>ECU_Layer/button/ecu_button_cfg.h</itemPath>
           <itemPath>ECU_Layer/button/ecu_button.h</itemPath>
@@ -47,6 +51,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="ECU_Layer" displayName="ECU_Layer" projectFiles="true">
+        <logicalFolder name="7_segment" displayName="7_segment" projectFiles="true">
+          <itemPath>ECU_Layer/7_segment/ecu_seven_seg.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="button" displayName="button" projectFiles="true">
           <itemPath>ECU_Layer/button/ecu_button.c</itemPath>
         </logicalFolder>
@@ -210,6 +217,7 @@
         <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
@@ -736,6 +744,7 @@
         <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>

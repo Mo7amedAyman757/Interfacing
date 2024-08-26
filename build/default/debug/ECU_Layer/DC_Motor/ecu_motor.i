@@ -5191,8 +5191,8 @@ STD_ReturnType dc_motor_stop(const dc_motor_t *dc_motor);
 # 8 "ECU_Layer/DC_Motor/ecu_motor.c" 2
 
 
-static pin_config_t motor_pin1;
-static pin_config_t motor_pin2;
+
+
 
 STD_ReturnType dc_motor_initialize(const dc_motor_t *dc_motor) {
 

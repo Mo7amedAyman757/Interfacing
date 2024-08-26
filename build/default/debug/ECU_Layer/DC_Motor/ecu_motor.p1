@@ -458,13 +458,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 ECU_Layer/DC_Motor/ecu_motor.c
-[; ;ECU_Layer/DC_Motor/ecu_motor.c: 10: static pin_config_t motor_pin1;
-[v _motor_pin1 `S305 ~T0 @X0 1 s ]
-"11
-[; ;ECU_Layer/DC_Motor/ecu_motor.c: 11: static pin_config_t motor_pin2;
-[v _motor_pin2 `S305 ~T0 @X0 1 s ]
-"13
+"13 ECU_Layer/DC_Motor/ecu_motor.c
 [; ;ECU_Layer/DC_Motor/ecu_motor.c: 13: STD_ReturnType dc_motor_initialize(const dc_motor_t *dc_motor) {
 [v _dc_motor_initialize `(uc ~T0 @X0 1 ef1`*CS306 ]
 {

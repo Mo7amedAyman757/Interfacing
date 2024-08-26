@@ -1,0 +1,82 @@
+/* 
+ * File:   application.c
+ * Author: LEGION
+ *
+ * Created on August 10, 2024, 10:07 PM
+ */
+
+
+#include "application.h"
+
+uint8 ones = 0, tens = 0;
+uint8 number = 0, number_BCD = 0;
+
+uint8 seconds = 55, minutes = 59, hours = 23;
+uint8 counter = 0;
+STD_ReturnType ret = E_NOK;
+
+int main() {
+
+    application_initialize();
+
+    while (1) {
+
+        for (counter = 0; counter < 50; counter++) {
+
+            ret = gpio_port_write_logic(PORTD_INDEX, 0x01); //0000 0001  
+            ret = gpio_port_write_logic(PORTC_INDEX, ((uint8) (hours / 10)));
+            __delay_us(3333);
+
+            ret = gpio_port_write_logic(PORTD_INDEX, 0x02); //0000 0010  
+            ret = gpio_port_write_logic(PORTC_INDEX, ((uint8) (hours % 10)));
+            __delay_us(3333);
+
+            ret = gpio_port_write_logic(PORTD_INDEX, 0x04); //0000 0100  
+            ret = gpio_port_write_logic(PORTC_INDEX, ((uint8) (minutes / 10)));
+            __delay_us(3333);
+
+            ret = gpio_port_write_logic(PORTD_INDEX, 0x08); //0000 1000  
+            ret = gpio_port_write_logic(PORTC_INDEX, ((uint8) (minutes % 10)));
+            __delay_us(3333);
+
+
+            ret = gpio_port_write_logic(PORTD_INDEX, 0x10); //0010 1111  
+            ret = gpio_port_write_logic(PORTC_INDEX, ((uint8) (seconds / 10)));
+            __delay_us(3333);
+
+            ret = gpio_port_write_logic(PORTD_INDEX, 0x20); //0001 1111 
+            ret = gpio_port_write_logic(PORTC_INDEX, ((uint8) (seconds % 10)));
+            __delay_us(3333);
+        }
+        seconds++;
+        if (seconds == 60) {
+            minutes++;
+            seconds = 0;
+        }
+        if (minutes == 60) {
+            hours++;
+            minutes = 0;
+        }
+        if (hours == 24) {
+            hours = 0;
+        }
+
+        /*
+            ret = gpio_port_write_logic(PORTC_INDEX, 5);
+        ret = gpio_port_write_logic(PORTD_INDEX, 0xFF);
+        __delay_ms(2000);
+        ret = gpio_port_write_logic(PORTD_INDEX, 0x00);
+        __delay_ms(2000);
+         */
+
+    }
+    return (EXIT_SUCCESS);
+}
+
+void application_initialize(void) {
+
+    ret = gpio_port_direction_initialization(PORTC_INDEX, 0xF0);
+    ret = gpio_port_direction_initialization(PORTD_INDEX, 0xC0);
+
+}
+
