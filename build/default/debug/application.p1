@@ -1,39 +1,24 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"64 ./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h
+[p mainexit ]
+"24 ./application.h
+[; ;./application.h: 24: void application_initialize(void);
+[v _application_initialize `(v ~T0 @X0 0 ef ]
+"64 ./ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h
 [s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S305 . port pin direction logic ]
-"24 ./ECU_Layer/DC_Motor/ecu_motor.h
-[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 24: typedef struct {
-[s S309 `S305 -> 2 `i ]
-[n S309 . dc_motor ]
-"11 application.c
-[; ;application.c: 11: dc_motor_t dc_motor_1 = {
-[c E3071 0 1 2 3 4 .. ]
-[n E3071 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3078 0 1 2 3 4 5 6 7 .. ]
-[n E3078 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E3067 0 1 .. ]
-[n E3067 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
-[p mainexit ]
-"26 ./application.h
-[; ;./application.h: 26: void application_initialize(void);
-[v _application_initialize `(v ~T0 @X0 0 ef ]
-"30 ./ECU_Layer/DC_Motor/ecu_motor.h
-[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 30: STD_ReturnType dc_motor_move_right(const dc_motor_t *dc_motor);
-[v _dc_motor_move_right `(uc ~T0 @X0 0 ef1`*CS309 ]
-[v F526 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF526 ~T0 @X0 0 e ]
-[p i __delay ]
-"31 ./ECU_Layer/DC_Motor/ecu_motor.h
-[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 31: STD_ReturnType dc_motor_move_left(const dc_motor_t *dc_motor);
-[v _dc_motor_move_left `(uc ~T0 @X0 0 ef1`*CS309 ]
-"32
-[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 32: STD_ReturnType dc_motor_stop(const dc_motor_t *dc_motor);
-[v _dc_motor_stop `(uc ~T0 @X0 0 ef1`*CS309 ]
-"29
-[; ;./ECU_Layer/DC_Motor/ecu_motor.h: 29: STD_ReturnType dc_motor_initialize(const dc_motor_t *dc_motor);
-[v _dc_motor_initialize `(uc ~T0 @X0 0 ef1`*CS309 ]
+"43 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
+[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 43: typedef struct {
+[s S313 `S305 1 `S305 1 `S305 -> 8 `i ]
+[n S313 . lcd_rs lcd_en lcd_data ]
+"61
+[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 61: STD_ReturnType lcd_8bit_send_char_data_pos(const chr_lcd_8bit_t *lcd, uint8 row, uint8 col, uint8 data);
+[v _lcd_8bit_send_char_data_pos `(uc ~T0 @X0 0 ef4`*CS313`uc`uc`uc ]
+"22 ./application.h
+[; ;./application.h: 22: extern chr_lcd_8bit_t lcd_2;
+[v _lcd_2 `S313 ~T0 @X0 0 e ]
+"20 ./ECU_Layer/ecu_layer_init.h
+[; ;./ECU_Layer/ecu_layer_init.h: 20: void ecu_layer_initialize(void);
+[v _ecu_layer_initialize `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -475,123 +460,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 application.c
-[; ;application.c: 11: dc_motor_t dc_motor_1 = {
-[v _dc_motor_1 `S309 ~T0 @X0 1 e ]
-[i _dc_motor_1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 0 `uc
--> . `E3067 0 `uc
--> -> 0 `ui `uc
-..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 1 `uc
--> . `E3067 0 `uc
--> -> 0 `ui `uc
-..
-..
-..
-..
-]
-"22
-[; ;application.c: 22: dc_motor_t dc_motor_2 = {
-[v _dc_motor_2 `S309 ~T0 @X0 1 e ]
-[i _dc_motor_2
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 2 `uc
--> . `E3067 0 `uc
--> -> 0 `ui `uc
-..
-:U ..
--> . `E3071 2 `uc
--> . `E3078 3 `uc
--> . `E3067 0 `uc
--> -> 0 `ui `uc
-..
-..
-..
-..
-]
-"33
-[; ;application.c: 33: STD_ReturnType ret = (STD_ReturnType)0x01;
-[v _ret `uc ~T0 @X0 1 e ]
-[i _ret
--> -> 1 `i `uc
-]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"35
-[; ;application.c: 35: int main() {
+"10 application.c
+[; ;application.c: 10: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"37
-[; ;application.c: 37:     application_initialize();
+"11
+[; ;application.c: 11:     STD_ReturnType ret = (STD_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"12
+[; ;application.c: 12:     application_initialize();
 [e ( _application_initialize ..  ]
-"39
-[; ;application.c: 39:     while (1) {
-[e :U 312 ]
+"14
+[; ;application.c: 14:     while (1) {
+[e :U 316 ]
 {
-"41
-[; ;application.c: 41:         ret = dc_motor_move_right(&dc_motor_1);
-[e = _ret ( _dc_motor_move_right (1 -> &U _dc_motor_1 `*CS309 ]
-"42
-[; ;application.c: 42:         ret = dc_motor_move_right(&dc_motor_2);
-[e = _ret ( _dc_motor_move_right (1 -> &U _dc_motor_2 `*CS309 ]
-"44
-[; ;application.c: 44:         _delay((unsigned long)((2000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"46
-[; ;application.c: 46:         ret = dc_motor_move_left(&dc_motor_1);
-[e = _ret ( _dc_motor_move_left (1 -> &U _dc_motor_1 `*CS309 ]
-"47
-[; ;application.c: 47:         ret = dc_motor_move_left(&dc_motor_2);
-[e = _ret ( _dc_motor_move_left (1 -> &U _dc_motor_2 `*CS309 ]
-"49
-[; ;application.c: 49:         _delay((unsigned long)((2000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"51
-[; ;application.c: 51:         ret = dc_motor_stop(&dc_motor_1);
-[e = _ret ( _dc_motor_stop (1 -> &U _dc_motor_1 `*CS309 ]
-"52
-[; ;application.c: 52:         ret = dc_motor_stop(&dc_motor_2);
-[e = _ret ( _dc_motor_stop (1 -> &U _dc_motor_2 `*CS309 ]
-"53
-[; ;application.c: 53:     }
+"16
+[; ;application.c: 16:         ret = lcd_8bit_send_char_data_pos(&lcd_2, 1, 1, 'A');
+[e = _ret ( _lcd_8bit_send_char_data_pos (4 , , , -> &U _lcd_2 `*CS313 -> -> 1 `i `uc -> -> 1 `i `uc -> -> 65 `ui `uc ]
+"17
+[; ;application.c: 17:         ret = lcd_8bit_send_char_data_pos(&lcd_2, 2, 1, 'B');
+[e = _ret ( _lcd_8bit_send_char_data_pos (4 , , , -> &U _lcd_2 `*CS313 -> -> 2 `i `uc -> -> 1 `i `uc -> -> 66 `ui `uc ]
+"18
+[; ;application.c: 18:         ret = lcd_8bit_send_char_data_pos(&lcd_2, 1, 2, 'B');
+[e = _ret ( _lcd_8bit_send_char_data_pos (4 , , , -> &U _lcd_2 `*CS313 -> -> 1 `i `uc -> -> 2 `i `uc -> -> 66 `ui `uc ]
+"19
+[; ;application.c: 19:         ret = lcd_8bit_send_char_data_pos(&lcd_2, 2, 2, 'A');
+[e = _ret ( _lcd_8bit_send_char_data_pos (4 , , , -> &U _lcd_2 `*CS313 -> -> 2 `i `uc -> -> 2 `i `uc -> -> 65 `ui `uc ]
+"21
+[; ;application.c: 21:     }
 }
-[e :U 311 ]
-[e $U 312  ]
-[e :U 313 ]
-"54
-[; ;application.c: 54:     return (0);
+[e :U 315 ]
+[e $U 316  ]
+[e :U 317 ]
+"22
+[; ;application.c: 22:     return (0);
 [e ) -> 0 `i ]
-[e $UE 310  ]
-"55
-[; ;application.c: 55: }
-[e :UE 310 ]
+[e $UE 314  ]
+"23
+[; ;application.c: 23: }
+[e :UE 314 ]
 }
-"57
-[; ;application.c: 57: void application_initialize(void) {
+"25
+[; ;application.c: 25: void application_initialize(void) {
 [v _application_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_initialize ]
 [f ]
-"59
-[; ;application.c: 59:     dc_motor_initialize(&dc_motor_1);
-[e ( _dc_motor_initialize (1 -> &U _dc_motor_1 `*CS309 ]
-"60
-[; ;application.c: 60:     dc_motor_initialize(&dc_motor_2);
-[e ( _dc_motor_initialize (1 -> &U _dc_motor_2 `*CS309 ]
-"61
-[; ;application.c: 61: }
-[e :UE 314 ]
+"27
+[; ;application.c: 27:     ecu_layer_initialize();
+[e ( _ecu_layer_initialize ..  ]
+"28
+[; ;application.c: 28: }
+[e :UE 318 ]
 }

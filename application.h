@@ -9,20 +9,18 @@
 #define	APPLICATION_H
 
 /* Section : Includes */
-#include "ECU_Layer/LED/ecu_led.h"
-#include "ECU_Layer/button/ecu_button.h"
-#include "ECU_Layer/Relay/ecu_relay.h"
-#include "ECU_Layer/DC_Motor/ecu_motor.h"
-#include "ECU_Layer/7_segment/ecu_seven_seg.h"
+#include "ECU_Layer/ecu_layer_init.h"
+
 /*Section : Macro Declaration*/
 
-#define _XTAL_FREQ 8000000UL
+
 /*Section : Macro Function Declaration*/
 
 
 /*Section : Data Type Declaration*/
-
-
+extern keypad_t keypad1;
+extern chr_lcd_4bit_t lcd_1;
+extern chr_lcd_8bit_t lcd_2;
 /*Section : Function Declaration*/
 void application_initialize(void);
 

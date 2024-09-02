@@ -1,0 +1,64 @@
+/* 
+ * File:   application.c
+ * Author: LEGION
+ *
+ * Created on August 10, 2024, 10:07 PM
+ */
+
+
+#include "application.h"
+
+
+
+uint8 ones = 0, tens = 0;
+uint8 number = 0, number_BCD = 0;
+
+STD_ReturnType ret = E_NOK;
+
+int main() {
+
+    application_initialize();
+
+    while (1) {
+        ret = gpio_port_write_logic(PORTC_INDEX, 5);
+        ret = gpio_port_write_logic(PORTD_INDEX, 0xFF);
+        __delay_ms(2000);
+        ret = gpio_port_write_logic(PORTD_INDEX, 0x00);
+        __delay_ms(2000);
+        /* 
+        number_BCD = (((uint8) number % 10) | (((uint8) number / 10) << 4));
+        ret = gpio_port_write_logic(PORTC_INDEX, number_BCD);
+        number++;
+        __delay_ms(500);
+         */
+
+        /*
+         for (tens = 0; tens < 10; tens++) {
+            ret = gpio_port_write_logic(PORTD_INDEX, tens);
+            for (ones = 0; ones < 10; ones++) {
+                ret = gpio_port_write_logic(PORTC_INDEX, ones);
+                __delay_ms(500);
+            }
+        }*/
+
+
+
+    }
+    return (EXIT_SUCCESS);
+}
+
+void application_initialize(void) {
+
+    ret = gpio_port_direction_initialization(PORTC_INDEX, 0xF0);
+    ret = gpio_port_direction_initialization(PORTD_INDEX, 0xC0);
+
+    /*
+     ret = gpio_port_write_logic(PORTC_INDEX, 0);
+    ret = gpio_port_write_logic(PORTD_INDEX, 0);
+    __delay_ms(1200);
+    ret = gpio_port_write_logic(PORTC_INDEX, 1);
+    ret = gpio_port_write_logic(PORTD_INDEX, 1);
+     */
+
+}
+

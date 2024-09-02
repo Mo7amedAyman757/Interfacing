@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Interfacing/MCAL_Layer/GPIO/hal_gpio.h</file>
-            <file>file:/D:/Interfacing/ECU_Layer/7_segment/ecu_seven_seg.h</file>
+            <file>file:/D:/Interfacing/ECU_Layer/ecu_layer_init.c</file>
             <file>file:/D:/Interfacing/application.h</file>
-            <file>file:/D:/Interfacing/ECU_Layer/7_segment/ecu_seven_seg_cfg.h</file>
+            <file>file:/D:/Interfacing/ECU_Layer/Chr_LCD/ecu_chr_lcd.c</file>
+            <file>file:/D:/Interfacing/ECU_Layer/ecu_layer_init.h</file>
+            <file>file:/D:/Interfacing/ECU_Layer/Chr_LCD/ecu_chr_lcd.h</file>
             <file>file:/D:/Interfacing/application.c</file>
-            <file>file:/D:/Interfacing/ECU_Layer/7_segment/ecu_seven_seg.c</file>
-            <file>file:/D:/Interfacing/MCAL_Layer/GPIO/hal_gpio.c</file>
         </group>
     </open-files>
 </project-private>
